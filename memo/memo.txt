@@ -1,0 +1,21 @@
+サーバー起動
+pg_ctl -D /usr/local/var/postgres -l logfile start
+postgres -D /usr/local/var/postgres
+
+サーバー停止
+pg_ctl -D /usr/local/var/postgres stop -s -m fast
+
+アドレス使用されていた場合の対処
+listenを検索
+sudo lsof -i | grep http
+killする
+sudo kill -9 「ID」
+
+DBユーザー作成
+createdb -p <userid>
+
+ユーザー一覧
+psql -q -c 'select * from pg_user' postgres
+
+DB作成
+createdb testdb -O testdb
