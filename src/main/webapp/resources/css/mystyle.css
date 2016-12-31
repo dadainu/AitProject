@@ -1,0 +1,33 @@
+html {
+    
+}
+
+body {
+    font-family:　Lucida Grande, segoe UI, ヒラギノ丸ゴ ProN W4, Hiragino Maru Gothic ProN, Meiryo, Arial, sans-serif;
+    font-size: 18px;
+    margin: 20px 10px 10px 20px;
+    line-height: 1.6em;
+}
+
+h1 {
+    font-size: 1.2em;
+    border-bottom: solid 1px #999;
+    text-align: center;
+}
+
+ul {
+    margin-top: 0px;
+    background-color: #eee;
+    font-size: 0.9em;
+}
+
+address {
+    font-style: normal;
+    font-size: 0.7em;
+    text-align: center;
+    border-top: solid 1px #999;
+}
+
+.error {
+    font-size: 0.7em;
+}

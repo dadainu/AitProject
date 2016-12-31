@@ -1,0 +1,18 @@
+#top {
+    width: 440px;
+}
+
+#left {
+    width: 120px;
+    float: left;
+}
+
+#content {
+    width: 300px;
+    margin-left: 140px;
+}
+
+#bottom {
+    width: 440px;
+    clear: both;
+}

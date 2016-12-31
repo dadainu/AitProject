@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+	<ui:composition template="AccountBookContent.xhtml">
+		<ui:define name="content">
+			<h:form class="form-horizontal">
+				<h1 class="page-header">登録確認</h1>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">日付：</label>
+					<div class="col-sm-10">
+						<h:outputText value="#{accountBookResponse.registrationDate}" />
+						<br />
+						<h:inputHidden value="#{accountBookRequest.registrationDate}" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">用途：</label>
+					<div class="col-sm-10">
+						<h:outputText value="#{accountBookResponse.uses}" />
+						<br />
+						<h:inputHidden value="#{accountBookRequest.uses}" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">金額：</label>
+					<div class="col-sm-10">
+						<h:outputText value="#{accountBookResponse.money}" />
+						<br />
+						<h:inputHidden value="#{accountBookRequest.money}" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<h:commandButton value="戻る"
+							action="#{accountBookManager.nextConfirmation()}"
+							class="btn btn-danger" />
+						<h:commandButton value="登録"
+							action="#{accountBookManager.nextCompletion()}"
+							class="btn btn-success" />
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
+

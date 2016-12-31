@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+	<ui:composition template="AccountBookContent.xhtml">
+		<ui:define name="content">
+			<h1 class="page-header">登録</h1>
+			<h:form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">日付：</label>
+					<div class="col-sm-10">
+						<h:inputText value="#{accountBookRequest.registrationDate}"
+							required="true" label="DATE" id="abDate" />
+						<h:message for="abDate" errorClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">用途：</label>
+					<div class="col-sm-10">
+						<h:selectOneRadio value="#{accountBookRequest.uses}"
+							required="true" label="USES" id="abUses">
+							<f:selectItems value="#{accountBookResponse.usesItem}" />
+						</h:selectOneRadio>
+						<h:message for="abUses" errorClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">金額：</label>
+					<div class="col-sm-10">
+						<h:inputText value="#{accountBookRequest.money}" required="true"
+							label="MONEY" id="abMoney" />
+						<h:message for="abMoney" errorClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<h:commandButton value="登録"
+							action="#{accountBookManager.nextConfirmation()}"
+							class="btn btn-success" />
+					</div>
+				</div>
+			</h:form>
+			<h:form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">固定費：</label>
+					<div class="col-sm-10">
+						<h:inputText value="#{accountBookRequest.money}" required="true"
+							label="MONEY" id="abMoney" />
+						<h:message for="abMoney" errorClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<h:commandButton value="登録"
+							action="#{accountBookManager.nextConfirmation()}"
+							class="btn btn-success" />
+					</div>
+				</div>
+			</h:form>
+			<h:form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">DEPOSIT：</label>
+					<div class="col-sm-10">
+						<h:inputText value="#{accountBookRequest.money}" required="true"
+							label="MONEY" id="abMoney" />
+						<h:message for="abMoney" errorClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<h:commandButton value="登録"
+							action="#{accountBookManager.nextConfirmation()}"
+							class="btn btn-success" />
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

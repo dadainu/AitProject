@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+	<ui:composition template="ResultsContent.xhtml">
+		<ui:define name="content">
+			<h1 class="page-header">書籍登録</h1>
+			<h:form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">タイトル：</label>
+					<div class="col-sm-10">
+						<h:inputText value="#{resultsRequest.bookName}" required="true"
+							id="bookTitle" label="TITLE" />
+						<h:message for="bookTitle" errorClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">ページ数：</label>
+					<div class="col-sm-10">
+						<h:inputText value="#{resultsRequest.pageCount}" required="true"
+							id="bookPage" label="PAGES" />
+						<h:message for="bookPage" errorClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<h:commandButton
+							action="#{resultsManager.nextBooksComfirmation()}" value="登録確認"
+							class="btn btn-success" />
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
+

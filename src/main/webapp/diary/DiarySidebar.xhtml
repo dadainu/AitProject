@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+	<ui:composition template="/templates/templateSidebar.xhtml">
+		<ui:define name="linkList">
+			<li><h:commandLink value="日記を書く"
+					action="#{diaryManager.nextWritting()}" /></li>
+			<li><h:commandLink value="日記を編集する"
+					action="#{diaryManager.nextEdit()}" /></li>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
+

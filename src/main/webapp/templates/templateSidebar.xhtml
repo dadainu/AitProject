@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition>
+		<div class="col-sm-3 col-md-2 sidebar">
+			<h:form>
+				<ul class="nav nav-sidebar">
+					<ui:insert name="linkList" />
+				</ul>
+				<hr />
+				<ul class="nav nav-sidebar">
+					<li><h:commandLink action="#{diaryManager.nextMain()}"
+							value="日記" /></li>
+					<li><h:commandLink action="#{accountBookManager.nextMain()}"
+							value="家計簿" /></li>
+					<li><h:commandLink action="#{resultsManager.nextMain()}"
+							value="実績" /></li>
+				</ul>
+			</h:form>
+		</div>
+	</ui:composition>
+</h:body>
+</html>
+
